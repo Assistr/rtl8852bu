@@ -942,7 +942,8 @@ bool halbb_fwofld_ctrl_ch_8852b(struct bb_info *bb, u8 central_ch, enum band_typ
 			halbb_fw_set_reg(bb, 0x231c, 0xffffff, 0xffdff5, 0);
 		}
 		if (bb->bb_phl_evt == MSG_EVT_SCAN_START) {
-			BB_WARNING("Skip gain error setting in scan status\n");
+			BB_DBG(bb, DBG_PHY_CONFIG,
+				"Skip gain error setting in scan status\n");
 		} else{ 
 		/* === Set Gain Error === */
 		halbb_fwofld_set_gain_error_8852b(bb, central_ch);
